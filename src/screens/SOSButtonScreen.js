@@ -17,6 +17,7 @@ import locationService from '../services/locationService';
 import audioService from '../services/audioService';
 import { alertService } from '../services/firebase';
 import { COLORS, ALERT_TYPES } from '../utils/constants';
+import { useNavigation } from '@react-navigation/native';
 
 const { width, height } = Dimensions.get('window');
 
@@ -26,6 +27,7 @@ const SOSButtonScreen = () => {
   const [currentLocation, setCurrentLocation] = useState(null);
   const [pulseAnim] = useState(new Animated.Value(1));
   const [recordingAudio, setRecordingAudio] = useState(false);
+  const navigation = useNavigation();
 
   useEffect(() => {
     // Démarrer le suivi GPS
@@ -254,13 +256,13 @@ const SOSButtonScreen = () => {
       <View style={styles.quickActions}>
         <Button
           title="Historique"
-          onPress={() => {/* Navigation vers l'historique */}}
+          onPress={() => navigation.navigate('AlertHistory')}
           variant="outline"
           style={styles.actionButton}
         />
         <Button
           title="Paramètres"
-          onPress={() => {/* Navigation vers les paramètres */}}
+          onPress={() => navigation.navigate('Settings')}
           variant="outline"
           style={styles.actionButton}
         />
@@ -433,4 +435,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default SOSButtonScreen; 
+export default SOSButtonScreen;

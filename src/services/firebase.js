@@ -18,13 +18,19 @@ import {
   query,
   where,
   orderBy,
-  onSnapshot 
+  onSnapshot,
+  getDocs
 } from 'firebase/firestore';
 import { FIREBASE_CONFIG, USER_ROLES } from '../utils/constants';
+import { initializeAuth, getReactNativePersistence } from 'firebase/auth';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 // Initialiser Firebase
 const app = initializeApp(FIREBASE_CONFIG);
-const auth = getAuth(app);
+const auth = initializeAuth(app, {
+  persistence: getReactNativePersistence(AsyncStorage)
+});
+ 
 const db = getFirestore(app);
 
 // Service d'authentification
@@ -218,4 +224,4 @@ export const alertService = {
   }
 };
 
-export { auth, db }; 
+export { auth, db };

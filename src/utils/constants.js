@@ -1,11 +1,12 @@
 // Configuration Firebase
+// Configuration Firebase
 export const FIREBASE_CONFIG = {
-  apiKey: "your-api-key",
-  authDomain: "your-auth-domain",
-  projectId: "your-project-id",
-  storageBucket: "your-storage-bucket",
-  messagingSenderId: "your-messaging-sender-id",
-  appId: "your-app-id"
+  apiKey: "AIzaSyAxvbFq44a8t4a6nDTRrKPCjG5q2jusXh0",
+  authDomain: "apppti-new.firebaseapp.com",
+  projectId: "apppti-new",
+  storageBucket: "apppti-new.appspot.com",
+  messagingSenderId: "477680469648",
+  appId: "1:477680469648:web:516f0d33d87685c4fc7a15"
 };
 
 // Types d'utilisateurs
